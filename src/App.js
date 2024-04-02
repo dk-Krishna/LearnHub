@@ -222,5 +222,3 @@ function App() {
 }
 
 export default App;
-// Testing-47
-// Video-53 [timeStamp: 00:00]

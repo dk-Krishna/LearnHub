@@ -104,7 +104,6 @@ const AdminCourses = () => {
         >
           All Courses
         </Heading>
-
         <TableContainer w={['100vw', 'full']}>
           <Table variant={'simple'} size={'lg'}>
             <TableCaption>All available courses in the database</TableCaption>
@@ -133,7 +132,7 @@ const AdminCourses = () => {
             </Tbody>
           </Table>
         </TableContainer>
-
+        
         <CourseModal
           id={courseId}
           isOpen={isOpen}

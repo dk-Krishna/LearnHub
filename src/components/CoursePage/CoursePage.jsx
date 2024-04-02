@@ -16,7 +16,7 @@ const CoursePage = ({ user }) => {
   const params = useParams();
 
   useEffect(() => {
-    dispatch(getCourseLectures(params.courseId));
+    dispatch(getCourseLectures(params.id));
   }, [dispatch, params]);
 
   if (
@@ -72,7 +72,7 @@ const CoursePage = ({ user }) => {
           </VStack>
         </>
       ) : (
-        <Heading opacity={0.5} mt={'4'}>
+        <Heading opacity={0.5} m={'auto'}>
           Lectures Not Found!
         </Heading>
       )}

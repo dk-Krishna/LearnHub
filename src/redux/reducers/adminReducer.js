@@ -12,6 +12,63 @@ const adminSlice = createSlice({
   name: 'admin',
   initialState,
   reducers: {
+    getAdminStatsRequest: state => {
+      state.loading = true;
+    },
+    getAdminStatsSuccess: (state, action) => {
+      state.loading = false;
+      state.stats = action.payload.stats;
+      state.userCount = action.payload.userCount;
+      state.subscribersCount = action.payload.subscribersCount;
+      state.viewsCount = action.payload.viewsCount;
+      state.userPercentage = action.payload.userPercentage;
+      state.subscribersPercentage = action.payload.subscribersPercentage;
+      state.viewsPercentage = action.payload.viewsPercentage;
+      state.userProfit = action.payload.userProfit;
+      state.subscribersProfit = action.payload.subscribersProfit;
+      state.viewsProfit = action.payload.viewsProfit;
+    },
+    getAdminStatsFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+
+    getAllUsersRequest: state => {
+      state.loading = true;
+    },
+    getAllUsersSuccess: (state, action) => {
+      state.loading = false;
+      state.users = action.payload;
+    },
+    getAllUsersFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+
+    updateUserRoleRequest: state => {
+      state.loading = true;
+    },
+    updateUserRoleSuccess: (state, action) => {
+      state.loading = false;
+      state.message = action.payload;
+    },
+    updateUserRoleFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+
+    deleteUserRequest: state => {
+      state.loading = true;
+    },
+    deleteUserSuccess: (state, action) => {
+      state.loading = false;
+      state.message = action.payload;
+    },
+    deleteUserFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+
     createCourseRequest: state => {
       state.loading = true;
     },
@@ -70,6 +127,18 @@ const adminSlice = createSlice({
 });
 
 export const {
+  getAdminStatsRequest,
+  getAdminStatsSuccess,
+  getAdminStatsFail,
+  getAllUsersRequest,
+  getAllUsersSuccess,
+  getAllUsersFail,
+  updateUserRoleRequest,
+  updateUserRoleSuccess,
+  updateUserRoleFail,
+  deleteUserRequest,
+  deleteUserSuccess,
+  deleteUserFail,
   createCourseRequest,
   createCourseSuccess,
   createCourseFail,

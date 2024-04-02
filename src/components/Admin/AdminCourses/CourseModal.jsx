@@ -65,14 +65,14 @@ const CourseModal = ({
       <ModalOverlay />
 
       <ModalContent>
-        <ModalHeader>{courseTitle}</ModalHeader>
+        <ModalHeader>Course Details</ModalHeader>
         <ModalCloseButton />
 
         <ModalBody p={'16'}>
           <Grid templateColumns={['1fr', '3fr 1fr']}>
             <Box px={['0', '16']}>
               <Box my={'5'}>
-                <Heading>CourseTitle</Heading>
+                <Heading>{courseTitle}</Heading>
                 <Heading size={'sm'} opacity={0.4}>
                   #{id}
                 </Heading>
