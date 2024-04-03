@@ -16,7 +16,7 @@ export const buySubscription = () => async dispatch => {
       withCredentials: true,
     });
 
-    dispatch(buySubscriptionSuccess(data));
+    dispatch(buySubscriptionSuccess(data.subscriptionId));
   } catch (error) {
     console.log('🚀 ~ login ~ error:', error);
     dispatch(buySubscriptionFail(error.response.data.message));
@@ -33,7 +33,7 @@ export const cancelSubscription = () => async dispatch => {
       }
     );
 
-    dispatch(cancelSubscriptionSuccess(data));
+    dispatch(cancelSubscriptionSuccess(data.message));
   } catch (error) {
     console.log('🚀 ~ login ~ error:', error);
     dispatch(cancelSubscriptionFail(error.response.data.message));

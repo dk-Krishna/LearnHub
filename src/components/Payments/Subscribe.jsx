@@ -26,8 +26,6 @@ const Subscribe = ({ user }) => {
 
   const { error: courseError } = useSelector(state => state.course);
 
-  console.log(subscriptionId);
-
   const subscriptionHander = async () => {
     const { data } = await axios.get(`${server}/payment/getRazorpayKey`);
 
@@ -43,7 +41,7 @@ const Subscribe = ({ user }) => {
 
     if (courseError) {
       toast.error(courseError);
-      dispatch(clearError());
+      dispatch(clearError()); 
     }
 
     if (subscriptionId) {

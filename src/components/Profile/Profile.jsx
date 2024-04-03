@@ -30,6 +30,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loadUser } from '../../redux/actions/user';
 import toast from 'react-hot-toast';
 import { clearError, clearMessage } from '../../redux/reducers/userReducer';
+import {
+  clearError as clearSubError,
+  clearMessage as clearSubMessage,
+} from '../../redux/reducers/subscriptionReducer';
 import { cancelSubscription } from '../../redux/actions/subscription';
 
 const Profile = ({ user }) => {
@@ -76,12 +80,12 @@ const Profile = ({ user }) => {
 
     if (subscriptionError) {
       toast.error(subscriptionError);
-      dispatch(clearError());
+      dispatch(clearSubError());
     }
 
     if (subscriptionMessage) {
       toast.success(subscriptionMessage);
-      dispatch(clearMessage());
+      dispatch(clearSubMessage());
       dispatch(loadUser());
     }
   }, [dispatch, error, message, subscriptionError, subscriptionMessage]);
