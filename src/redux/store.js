@@ -6,7 +6,7 @@ import subscriptionReducer from './reducers/subscriptionReducer.js';
 import adminReducer from './reducers/adminReducer.js';
 import otherReducer from './reducers/otherReducer.js';
 
-export const server = 'http://localhost:2000/api/v1';
+export const server = 'https://learnhub-server-1.onrender.com/api/v1';
 
 const store = configureStore({
   reducer: {
